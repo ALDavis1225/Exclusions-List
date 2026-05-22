@@ -1,0 +1,33 @@
+# Exclusion Detection Keywords
+# Organized by category for the payer exclusion scrubber
+
+exclusion_types:
+  - excluded
+  - exclusion
+  - non-covered
+  - not covered
+  - disallowed
+
+medical_necessity:
+  - not reasonable and necessary
+  - medical necessity criteria updated
+  - experimental
+  - investigational
+  - unproven
+  - cosmetic
+
+authorization:
+  - prior authorization
+  - precertification
+  - site of service
+
+policy_related:
+  - archived
+  - deleted policy
+  - coding update
+  - payment policy
+  - claim edit
+
+billing:
+  - not separately billable
+  - self-administered drug exclusion
