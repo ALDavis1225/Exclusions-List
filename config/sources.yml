@@ -1,0 +1,42 @@
+# Payer policy sources registry
+# Each source is monitored for policy changes and exclusion keywords
+
+sources:
+  # Alaska Medicare - Noridian JF Part B
+  - payer: Alaska Medicare - Noridian JF Part B
+    source_type: latest_updates
+    url: "https://med.noridianmedicare.com/web/jfb/fees-news/latest-updates"
+    priority: high
+
+  - payer: Alaska Medicare - Noridian JF Part B
+    source_type: lcds
+    url: "https://med.noridianmedicare.com/web/jfb/policies/lcd"
+    priority: high
+
+  # Alaska Medicaid
+  - payer: Alaska Medicaid
+    source_type: billing_manuals
+    url: "https://www.medicaidalaska.com/portals/wps/portal/BillingManuals"
+    priority: high
+
+  # Premera Alaska
+  - payer: Premera Alaska
+    source_type: medical_policy_coding_updates
+    url: "https://www.premera.com/ak/provider/news/medical-policies/policy-updates/"
+    priority: high
+
+  - payer: Premera Alaska
+    source_type: payment_policy_updates
+    url: "https://www.premera.com/ak/provider/news/payment-policies/policy-updates/"
+    priority: high
+
+  # Aetna
+  - payer: Aetna
+    source_type: medical_clinical_policy_bulletins
+    url: "https://www.aetna.com/health-care-professionals/clinical-policy-bulletins/medical-clinical-policy-bulletins.html"
+    priority: high
+
+  - payer: Aetna
+    source_type: provider_news_officelink
+    url: "https://www.aetna.com/health-care-professionals/newsletters-news/provider-newsletters-archive.html"
+    priority: medium
