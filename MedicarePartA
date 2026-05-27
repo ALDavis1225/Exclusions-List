@@ -1,0 +1,14 @@
+- payer: Alaska Medicare - Noridian JF Part A
+    source_type: latest_updates
+    url: "https://med.noridianmedicare.com/web/jfa/fees-news/latest-updates"
+    priority: high
+
+  - payer: Alaska Medicare - Noridian JF Part A
+    source_type: lcds
+    url: "https://med.noridianmedicare.com/web/jfa/policies/lcd"
+    priority: high
+
+  - payer: Alaska Medicare - Noridian JF Part A
+    source_type: billing_coding_articles
+    url: "https://med.noridianmedicare.com/web/jfa/policies/billing-coding-articles"
+    priority: high
