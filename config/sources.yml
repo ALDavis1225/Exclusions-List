@@ -40,3 +40,18 @@ sources:
     source_type: provider_news_officelink
     url: "https://www.aetna.com/health-care-professionals/newsletters-news/provider-newsletters-archive.html"
     priority: medium
+    
+- payer: Alaska Medicare - Noridian JF Part A
+    source_type: latest_updates
+    url: "https://med.noridianmedicare.com/web/jfa/fees-news/latest-updates"
+    priority: high
+
+  - payer: Alaska Medicare - Noridian JF Part A
+    source_type: lcds
+    url: "https://med.noridianmedicare.com/web/jfa/policies/lcd"
+    priority: high
+
+  - payer: Alaska Medicare - Noridian JF Part A
+    source_type: billing_coding_articles
+    url: "https://med.noridianmedicare.com/web/jfa/policies/billing-coding-articles"
+    priority: high
