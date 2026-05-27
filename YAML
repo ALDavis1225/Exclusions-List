@@ -1,0 +1,46 @@
+name: Payer Exclusion Watch
+
+on:
+  schedule:
+    - cron: "17 15 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  scrub:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        run: python src/scrape.py
+
+      - name: Commit snapshots and reports
+        run: |
+          git config user.name "payer-policy-bot"
+          git config user.email "actions@github.com"
+          git add data/ reports/
+          git commit -m "Update payer policy snapshots" || echo "No changes"
+          git push
+
+      - name: Open review issue if findings exist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -s reports/latest_findings.md ]; then
+            gh issue create \
+              --title "Payer exclusion/procedure updates require review" \
+              --body-file reports/latest_findings.md \
+              --label "payer-update,needs-review"
+          fi
