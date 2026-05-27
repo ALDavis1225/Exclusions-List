@@ -31,3 +31,12 @@ policy_related:
 billing:
   - not separately billable
   - self-administered drug exclusion
+
+  def load_keywords(path: Path) -> list[str]:
+    raw = yaml.safe_load(path.read_text())
+    terms = []
+    for group_terms in raw.values():
+        terms.extend(group_terms)
+    return sorted(set(terms))
+
+    
